@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.trunk'
 COIN_DAEMON='trunkd'
 COIN_CLI='trunk-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/trunkcoin/TrunkCoin/files/3005323/Trunk_.Daemon_Ubunru_16.04.tar.gz'
+COIN_TGZ='https://github.com/trunkcoin/TrunkCoin/releases/download/v1.0.0.0/TrunkCoin-1.0.0.0-ubuntu_daemon_16.04.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='trunk'
 COIN_PORT=23319
@@ -47,7 +47,7 @@ function download_node() {
   echo -e "${GREEN}Downloading and Installing VPS $COIN_NAME Daemon${NC}"
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
-  tar xzvf Trunk_.Daemon_Ubunru_16.04.tar.gz
+  tar xzvf TrunkCoin-1.0.0.0-ubuntu_daemon_16.04.tar.gz
   cd rev >/dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
